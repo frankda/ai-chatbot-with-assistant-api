@@ -97,7 +97,7 @@ export default function Chat() {
             <form className="flex items-center gap-2" onSubmit={submitMessage}>
               <Textarea
                 disabled={status !== 'awaiting_message'}
-                placeholder="Message ChatGPT..."
+                placeholder="Message Vodafone Assistant..."
                 className="flex-1 rounded-xl p-3 resize-none"
                 onChange={handleInputChange}
                 value={input}
