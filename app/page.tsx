@@ -14,7 +14,7 @@ export default function Chat() {
     useAssistant({api: '/api/assistant'});
 
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault(); // Prevent the default action to avoid adding a new line in the textarea
       submitMessage();
@@ -114,7 +114,7 @@ export default function Chat() {
   );
 }
 
-function MessageCircleIcon(props) {
+function MessageCircleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -134,7 +134,7 @@ function MessageCircleIcon(props) {
 }
 
 
-function MinimizeIcon(props) {
+function MinimizeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -157,7 +157,7 @@ function MinimizeIcon(props) {
 }
 
 
-function MoveHorizontalIcon(props) {
+function MoveHorizontalIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -179,7 +179,7 @@ function MoveHorizontalIcon(props) {
 }
 
 
-function SendIcon(props) {
+function SendIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -200,7 +200,7 @@ function SendIcon(props) {
 }
 
 
-function XIcon(props) {
+function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

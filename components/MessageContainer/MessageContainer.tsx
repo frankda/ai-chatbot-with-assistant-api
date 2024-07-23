@@ -33,7 +33,7 @@ const MessageContainer: React.FC<MessageContainerProps> = ({ loading, messageTyp
 
 export default MessageContainer;
 
-export function LoaderIcon(props) {
+export function LoaderIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
