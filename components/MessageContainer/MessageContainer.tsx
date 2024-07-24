@@ -15,7 +15,7 @@ const MessageContainer: React.FC<MessageContainerProps> = ({ loading, messageTyp
   return (
     <div className={`flex items-start gap-4 ${isUserMessage ? '' : 'justify-end'}`}>
       <Avatar className="w-8 h-8 border">
-        <AvatarImage src={avatarSrc}/>
+        <AvatarImage src={isUserMessage ? avatarSrc : '/logo.svg'}/>
         <AvatarFallback>{avatarFallback}</AvatarFallback>
       </Avatar>
       <div className={`rounded-lg p-4 max-w-[80%] ${isUserMessage ? 'bg-card text-muted-foreground' : 'bg-primary text-primary-foreground'}`}>

@@ -31,7 +31,7 @@ export default function Chat() {
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-full w-full h-full"
+          className="rounded-full bg-primary fixed bottom-10 right-10"
           onClick={() => setIsMinimized(false)}
         >
           <MessageCircleIcon className="w-5 h-5"/>
