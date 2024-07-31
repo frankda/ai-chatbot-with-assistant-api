@@ -9,7 +9,6 @@ import {Textarea} from "@/components/ui/textarea";
 import MessageContainer, {LoaderIcon} from "@/components/MessageContainer/MessageContainer";
 
 export default function Chat() {
-  const [isMinimized, setIsMinimized] = useState(false);
   const {status, messages, input, submitMessage, handleInputChange} =
     useAssistant({api: '/api/assistant'});
 
@@ -23,20 +22,8 @@ export default function Chat() {
 
   return (
     <div
-      className={`flex flex-col h-screen bg-background ${
-        isMinimized ? "fixed bottom-4 right-4 w-[60px] h-[60px]" : ""
-      }`}
+      className="max-w-[500px] bg-background"
     >
-      {isMinimized ? (
-        <Button
-          variant="ghost"
-          size="icon"
-          className="rounded-full bg-primary fixed bottom-10 right-10"
-          onClick={() => setIsMinimized(false)}
-        >
-          <MessageCircleIcon className="w-5 h-5"/>
-        </Button>
-      ) : (
         <>
           <header className="flex items-center justify-between px-4 py-3 border-b bg-card">
             <div className="flex items-center gap-2">
@@ -46,14 +33,9 @@ export default function Chat() {
               </Avatar>
               <div className="text-sm font-medium">Vodafone Assistant</div>
             </div>
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" onClick={() => setIsMinimized(true)}>
-                <MinimizeIcon className="w-5 h-5"/>
-              </Button>
-            </div>
           </header>
 
-          <div className="flex-1 overflow-auto p-4">
+          <div className="flex-1 overflow-auto h-[600px] p-4">
             <div className="flex flex-col gap-4">
               <MessageContainer
                 messageType="assistant"
@@ -109,7 +91,6 @@ export default function Chat() {
             </form>
           </div>
         </>
-      )}
     </div>
   );
 }
