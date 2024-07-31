@@ -22,7 +22,7 @@ export default function Chat() {
 
   return (
     <div
-      className="max-w-[500px] bg-background"
+      className="flex flex-col h-screen bg-background"
     >
         <>
           <header className="flex items-center justify-between px-4 py-3 border-b bg-card">
@@ -35,7 +35,7 @@ export default function Chat() {
             </div>
           </header>
 
-          <div className="flex-1 overflow-auto h-[600px] p-4">
+          <div className="flex-1 overflow-auto p-4">
             <div className="flex flex-col gap-4">
               <MessageContainer
                 messageType="assistant"
