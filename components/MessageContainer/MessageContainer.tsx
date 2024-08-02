@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Message } from "ai/react";
+import Markdown from 'react-markdown'
 
 interface MessageContainerProps {
   loading?:  boolean;
@@ -24,7 +25,15 @@ const MessageContainer: React.FC<MessageContainerProps> = ({ loading, messageTyp
           <div className="font-medium">{isUserMessage ? 'You' : 'Vodafone assistant'}</div>
         </div>
         <div className="prose">
-          <p>{message}</p>
+          <Markdown
+            components={{
+              a: ({ node, ...props }) => (
+                <a {...props} target="_blank" rel="noopener noreferrer" />
+              ),
+            }}
+          >
+            {message}
+          </Markdown>
         </div>
       </div>
     </div>
