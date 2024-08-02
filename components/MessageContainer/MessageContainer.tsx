@@ -18,7 +18,7 @@ const MessageContainer: React.FC<MessageContainerProps> = ({ loading, messageTyp
         <AvatarImage src={isUserMessage ? avatarSrc : '/logo.svg'}/>
         <AvatarFallback>{avatarFallback}</AvatarFallback>
       </Avatar>
-      <div className={`rounded-lg p-4 max-w-[80%] ${isUserMessage ? 'bg-card text-muted-foreground' : 'bg-primary text-primary-foreground'}`}>
+      <div className={`rounded-lg p-4 max-w-[80%] ${isUserMessage ? 'bg-card text-muted-foreground' : 'bg-white border'}`}>
         <div className="flex items-center gap-2">
           {loading && (<LoaderIcon className="w-5 h-5 animate-spin"/>)}
           <div className="font-medium">{isUserMessage ? 'You' : 'Vodafone assistant'}</div>
