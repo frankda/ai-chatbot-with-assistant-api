@@ -9,9 +9,8 @@ import {Textarea} from "@/components/ui/textarea";
 import MessageContainer, {LoaderIcon} from "@/components/MessageContainer/MessageContainer";
 
 export default function Chat() {
-  const {status, messages, input, submitMessage, handleInputChange} =
+  const {status, messages, input, setInput, submitMessage, handleInputChange} =
     useAssistant({api: '/api/assistant'});
-
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -19,6 +18,11 @@ export default function Chat() {
       submitMessage();
     }
   };
+
+  const handleSuggestedPromptClick = () => {
+    setInput('Any other promotions?');
+    submitMessage();
+  }
 
   return (
     <div
@@ -75,7 +79,10 @@ export default function Chat() {
             </div>
           </div>
 
-          <div className="border-t bg-card p-4">
+          <div className="border-t bg-card p-4 relative">
+            <div className="absolute border -top-12 bg-white px-2 py-1 cursor-pointer" onClick={handleSuggestedPromptClick}>
+              Any other promotions?
+            </div>
             <form className="flex items-center gap-2" onSubmit={submitMessage}>
               <Textarea
                 disabled={status !== 'awaiting_message'}
